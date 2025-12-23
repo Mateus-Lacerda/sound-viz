@@ -71,15 +71,16 @@ options:
 
 To add the visualizer to your Waybar, add the following configuration to your `config` file (usually located at `~/.config/waybar/config`).
 
-**Note:** Ensure the path in `"exec"`, `"on-click"`, etc., points to where `sound_viz` was installed (e.g., `~/.local/bin/sound_viz` or your specific user path).
+> [!NOTE]
+> Ensure the path in `"exec"`, `"on-click"`, etc., points to the **absolute** path where `sound_viz` was installed (e.g., `/home/user/.local/bin/sound_viz` or your specific user path).
 
 ```json
     "custom/sound_viz": {
-        "exec": "path/to/executable/sound_viz --output waybar",
+        "exec": "/path/to/executable/sound_viz --output waybar",
         "tail": true,
         "format": "{}",
-        "on-click": "path/to/executable/sound_viz --output waybar --playerctl-command play-pause",
-        "on-scroll-up": "path/to/executable/sound_viz --output waybar --playerctl-command previous",
-        "on-scroll-down": "path/to/executable/sound_viz --output waybar --playerctl-command next"
+        "on-click": "/path/to/executable/sound_viz --output waybar --playerctl-command play-pause",
+        "on-scroll-up": "/path/to/executable/sound_viz --output waybar --playerctl-command previous",
+        "on-scroll-down": "/path/to/executable/sound_viz --output waybar --playerctl-command next"
     }
 ```
