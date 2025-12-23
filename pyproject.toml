@@ -1,0 +1,15 @@
+[project]
+name = "sound-viz"
+version = "0.1.0"
+description = "A lightweight sound visualization tool for Linux."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.4.0",
+    "soundcard>=0.4.5",
+]
+
+[tool.ty]
+
+[project.scripts]
+sound_viz = "sound_viz:main"
