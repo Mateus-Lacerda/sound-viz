@@ -44,7 +44,7 @@ which sound_viz
 ```console
 $ sound_viz --help
 
-usage: sound_viz [-h] [-l] [-d DEVICE] [-t {blocks,braille,lines}] [-w WIDTH] [-g GAIN] [-m {wave,abs}] [-v] [-o OUTPUT] [-p {play-pause,next,previous}]
+usage: sound_viz [-h] [-l] [-d DEVICE] [-t {blocks,braille,lines}] [-w WIDTH] [-g GAIN] [-m {wave,abs}] [-v] [-o OUTPUT] [-p {play-pause,next,previous}] [-sd]
 
 A lightweight sound visualization tool.
 
@@ -65,6 +65,7 @@ options:
                         Output destination: 'stdout' (default) or 'waybar'.
   -p {play-pause,next,previous}, --playerctl-command {play-pause,next,previous}
                         Control a media player using playerctl (play-pause, next, previous).
+  -sd, --scan-device    Switch to the next available audio device.
 ```
 
 ## Usage with Waybar
@@ -79,8 +80,9 @@ To add the visualizer to your Waybar, add the following configuration to your `c
         "exec": "/path/to/executable/sound_viz --output waybar",
         "tail": true,
         "format": "{}",
-        "on-click": "/path/to/executable/sound_viz --output waybar --playerctl-command play-pause",
-        "on-scroll-up": "/path/to/executable/sound_viz --output waybar --playerctl-command previous",
-        "on-scroll-down": "/path/to/executable/sound_viz --output waybar --playerctl-command next"
+        "on-click": "/path/to/executable/sound_viz --playerctl-command play-pause",
+        "on-scroll-up": "/path/to/executable/sound_viz --playerctl-command previous",
+        "on-scroll-down": "/path/to/executable/sound_viz --playerctl-command next",
+        "on-middle-click": "/path/to/executable/sound_viz --scan-device"
     }
 ```
