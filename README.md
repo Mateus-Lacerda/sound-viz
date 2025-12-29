@@ -83,6 +83,6 @@ To add the visualizer to your Waybar, add the following configuration to your `c
         "on-click": "/path/to/executable/sound_viz --playerctl-command play-pause",
         "on-scroll-up": "/path/to/executable/sound_viz --playerctl-command previous",
         "on-scroll-down": "/path/to/executable/sound_viz --playerctl-command next",
-        "on-middle-click": "/path/to/executable/sound_viz --scan-device"
+        "on-click-middle": "/path/to/executable/sound_viz --scan-device"
     }
 ```
