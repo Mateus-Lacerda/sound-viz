@@ -12,4 +12,4 @@ dependencies = [
 [tool.ty]
 
 [project.scripts]
-sound_viz = "sound_viz:main"
+sound_viz = "sound_viz.main:main"
